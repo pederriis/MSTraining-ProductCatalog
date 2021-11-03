@@ -22,7 +22,14 @@ namespace MSTraining_ProductCatalog.Persistence.Repositories
 
             return products;
         }
-        
+
+        public ProductEF GetAllSingleProduct(int productId)
+        {
+            var product = _Context.Products.FirstOrDefault(x=>x.Id==productId);
+
+            return product;
+        }
+
         public void CreateProducts(ProductEF productEF)
         {
             _Context.Add(productEF);

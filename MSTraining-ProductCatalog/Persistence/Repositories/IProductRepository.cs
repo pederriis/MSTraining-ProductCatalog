@@ -9,6 +9,8 @@ namespace MSTraining_ProductCatalog.Persistence.Repositories
     public interface IProductRepository
     {
         IEnumerable<ProductEF> GetAllProducts();
+        ProductEF GetAllSingleProduct(int productId);
+
         void CreateProducts(ProductEF productEF);
         void EditProduct(ProductEF productEF, int productsId);
     }

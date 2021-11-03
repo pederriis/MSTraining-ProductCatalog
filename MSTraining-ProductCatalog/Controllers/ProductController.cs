@@ -30,6 +30,15 @@ namespace MSTraining_ProductCatalog.Controllers
             return ProductMapper.Map(productEF);
         }
 
+        [HttpGet]
+        [Route("id")]
+        public Product GetSingleProduct(int productId)
+        {
+            var productEF = _ProductRepository.GetAllSingleProduct(productId);
+
+            return ProductMapper.Map(productEF);
+        }
+
         [HttpPost]
         public void Post(Product products)
         {
