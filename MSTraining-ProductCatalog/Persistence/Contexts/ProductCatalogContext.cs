@@ -13,7 +13,7 @@ namespace MSTraining_ProductCatalog.Persistence.Contexts
         {
         }
 
-        public DbSet<ProductEF> ProductCatalogs { get; set; }
+        public DbSet<ProductEF> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
