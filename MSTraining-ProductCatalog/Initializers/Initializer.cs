@@ -36,6 +36,7 @@ namespace MSTraining_ProductCatalog.Initializers
                 productCatalogContext.SaveChanges();
             }
 
+
             
 
 
