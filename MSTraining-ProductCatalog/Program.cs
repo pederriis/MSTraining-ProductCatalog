@@ -24,9 +24,7 @@ namespace MSTraining_ProductCatalog
         {
             var host = CreateHostBuilder(args).Build();
 
-
-
-           // CreateDbIfNotExists(host);
+            CreateDbIfNotExists(host);
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
@@ -54,8 +52,6 @@ namespace MSTraining_ProductCatalog
      
                 
                 });
-
-
 
 
         private static void CreateDbIfNotExists(IHost host)

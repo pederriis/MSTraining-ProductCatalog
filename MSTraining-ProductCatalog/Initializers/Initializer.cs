@@ -16,7 +16,7 @@ namespace MSTraining_ProductCatalog.Initializers
         public static void SeedDatabase(ProductCatalogContext productCatalogContext)
         {
 
-            if (productCatalogContext.Products.Count()==0)
+            if (!productCatalogContext.Products.Any())
             {
 
                 List<ProductEF> products = new List<ProductEF> {
