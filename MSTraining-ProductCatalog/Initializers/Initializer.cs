@@ -15,7 +15,10 @@ namespace MSTraining_ProductCatalog.Initializers
 
         public static void SeedDatabase(ProductCatalogContext productCatalogContext)
         {
+            //sikrer sig at databasen eksisterer og skaber, den hvis den ikke gør
+            productCatalogContext.Database.EnsureCreated();
 
+            //seeder databasen, hvis den er tom
             if (!productCatalogContext.Products.Any())
             {
 

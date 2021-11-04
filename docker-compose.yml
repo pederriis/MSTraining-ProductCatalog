@@ -1,0 +1,35 @@
+version: '3.4'
+
+services:
+  mstraining-productcatalog:
+    image: ${DOCKER_REGISTRY-}mstrainingproductcatalog
+    restart: always
+    ports:
+        - 3302:3302
+    build:
+      context: .
+      dockerfile: MSTraining-ProductCatalog/Dockerfile
+    depends_on: 
+        - db
+        - mstraning-customer
+        
+  mstraning-customer:
+    image: ${DOCKER_REGISTRY-}mstcostumer3
+    restart: always
+    ports:
+        - 3301:3301
+    build: 
+      context: C:/udv/training/MStraning-customer
+      dockerfile: MStraning-customer/Dockerfile
+    depends_on: 
+        - db
+
+  db:
+   image: mcr.microsoft.com/mssql/server:2019-latest
+   restart: always
+   ports: 
+     - 21433:1433
+   environment:
+        restart: always
+        SA_PASSWORD: "Password123!"
+        ACCEPT_EULA: "Y"
